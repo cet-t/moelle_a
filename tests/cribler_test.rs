@@ -98,6 +98,13 @@ macro_rules! suite {
                 rng_test!(sfc32_test, trng_a::Sfc32, u32, 32, $run);
                 rng_test!(sfc64_test, trng_a::Sfc64, u64, 64, $run);
             }
+
+            #[cfg(feature = "squares")]
+            mod squares {
+                use super::*;
+
+                rng_test!(squares32_test, trng_a::Squares32, u32, 32, $run);
+            }
         }
     };
 }

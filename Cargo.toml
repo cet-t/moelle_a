@@ -15,8 +15,9 @@ cribler_practrand = { path = "../cribler_practrand" }
 
 [features]
 serde = ["dep:serde"]
-full = ["biski", "sfmt", "xorwow", "sfc"]
+full = ["biski", "sfmt", "xorwow", "sfc", "squares"]
 biski = []
 sfmt = ["dep:bytemuck", "dep:pastey"]
 xorwow = []
 sfc = []
+squares = []
