@@ -72,6 +72,9 @@ macro_rules! suite {
             #[cfg(feature = "biski")]
             rng_test!(biski64_test, trng_a::Biski64, u64, 64, $run);
 
+            #[cfg(feature = "mt")]
+            rng_test!(mt_test, trng_a::Mt19937, u32, 32, $run);
+
             #[cfg(feature = "sfmt")]
             mod sfmt {
                 use super::*;
@@ -86,6 +89,8 @@ macro_rules! suite {
                 rng_test!(sfmt86243_test, trng_a::Sfmt86243, u32, 32, $run);
                 rng_test!(sfmt132049_test, trng_a::Sfmt132049, u32, 32, $run);
                 rng_test!(sfmt216091_test, trng_a::Sfmt216091, u32, 32, $run);
+
+                rng_test!(sfmt1993764_test, trng_a::Sfmt1993764, u64, 64, $run);
             }
 
             #[cfg(feature = "xorwow")]

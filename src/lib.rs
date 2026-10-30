@@ -6,6 +6,11 @@ mod biski;
 #[cfg(feature = "biski")]
 pub use crate::biski::*;
 
+#[cfg(feature = "mt")]
+mod mt;
+#[cfg(feature = "mt")]
+pub use crate::mt::*;
+
 #[cfg(feature = "sfmt")]
 mod sfmt;
 #[cfg(feature = "sfmt")]

@@ -6,7 +6,11 @@
 #   nu test.nu -q
 #   nu test.nu --full
 #   nu test.nu --filter biski64_test
+#   use ./test.nu
+#   test -q | where status == FAIL
 # TESTU01_RUNNER and PRACTRAND_EXE override automatic engine discovery.
+
+const ROOT = (path self | path dirname)
 
 def find-engine [variable: string, candidates: list<string>, command: string] {
     let configured = ($env | get -o $variable | default "")
@@ -41,12 +45,12 @@ def run-cargo [args: list<string>, quiet: bool] {
 }
 
 # Run tests sequentially in release mode and report all failures at the end.
-def main [
-    --quiet(-q) # Show N/M progress instead of logs; always show the results table.
+export def main [
+    --quiet(-q) # Return a structured Nu table without logs or progress output.
     --full # Include the long-running Crush and BigCrush batteries.
     --filter: string = "" # Filter statistical tests by RNG name, e.g. biski64_test.
 ] {
-    cd $env.FILE_PWD
+    cd $ROOT
     let parent = ($env.PWD | path dirname)
     let suffix = (if $nu.os-info.name == "windows" { ".exe" } else { "" })
 
@@ -80,26 +84,31 @@ def main [
     if ($selected | is-empty) {
         error make {msg: $"No statistical tests match filter: ($filter)"}
     }
-    # Count the normal test suite as one job, followed by each statistical test.
-    let total = (($selected | length) + 1)
-    if $quiet { print --no-newline $"Progress: 0/($total)" }
-    let normal_code = (run-cargo [test --release --all-features -- --test-threads=1] $quiet)
-    mut results = [{test: "normal tests", exit_code: $normal_code}]
-    if $quiet { print --no-newline $"\rProgress: 1/($total)" }
+    let code = (run-cargo [test --release --all-features -- --test-threads=1] $quiet)
+    mut results = [{
+      type: cargo,
+      name: normal,
+      status: (if $code == 0 { "PASS" } else { "FAIL" }),
+      code: $code
+    }]
 
     for test in $selected {
         if not $quiet { print $"Running ($test)" }
         let code = (run-cargo [test --release --all-features --test cribler_test $test -- --exact --ignored --nocapture --test-threads=1] $quiet)
-        $results = ($results | append {test: $test, exit_code: $code})
-        if $quiet { print --no-newline $"\rProgress: ($results | length)/($total)" }
+        let parts = ($test | split row "::")
+        $results = ($results | append {
+            type: ($parts | first | str replace --all '_' '')
+            name: ($parts | last | str replace --all '_test' '')
+            status: (if $code == 0 { "PASS" } else { "FAIL" })
+            code: $code
+        })
     }
-    if $quiet { print "" }
+
+    if $quiet { return $results }
 
     print "\nTest results:"
-    print ($results | each {|result|
-        {test: $result.test, status: (if $result.exit_code == 0 { "PASS" } else { "FAIL" }), exit_code: $result.exit_code}
-    } | table --expand)
-    let failures = ($results | where exit_code != 0)
+    print ($results | table --expand)
+    let failures = ($results | where code != 0)
     print $"Passed: (($results | length) - ($failures | length)), Failed: ($failures | length)"
     if not ($failures | is-empty) { exit 1 }
 }
