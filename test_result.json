@@ -1,0 +1,248 @@
+[
+  {
+    "type": "cargo",
+    "name": "normal",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "biski64",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "jsf",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "mt",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfc32",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfc64",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt11213",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt1279",
+    "status": "FAIL",
+    "code": 101
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt132049",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt1993764",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt19937",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt216091",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt2281",
+    "status": "FAIL",
+    "code": 101
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt4253",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt44497",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt607",
+    "status": "FAIL",
+    "code": 101
+  },
+  {
+    "type": "practrand",
+    "name": "sfmt86243",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "squares32",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "twistedgfsr",
+    "status": "FAIL",
+    "code": 101
+  },
+  {
+    "type": "practrand",
+    "name": "wyhash64",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "practrand",
+    "name": "xorwow",
+    "status": "FAIL",
+    "code": 101
+  },
+  {
+    "type": "smallcrush",
+    "name": "biski64",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "jsf",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "mt",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfc32",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfc64",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt11213",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt1279",
+    "status": "FAIL",
+    "code": 101
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt132049",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt1993764",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt19937",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt216091",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt2281",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt4253",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt44497",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt607",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "sfmt86243",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "squares32",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "twistedgfsr",
+    "status": "FAIL",
+    "code": 101
+  },
+  {
+    "type": "smallcrush",
+    "name": "wyhash64",
+    "status": "PASS",
+    "code": 0
+  },
+  {
+    "type": "smallcrush",
+    "name": "xorwow",
+    "status": "PASS",
+    "code": 0
+  }
+]

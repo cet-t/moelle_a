@@ -1,5 +1,4 @@
 #![no_std]
-pub(crate) mod splitmix;
 
 #[cfg(feature = "biski")]
 mod biski;

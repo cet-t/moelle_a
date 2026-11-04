@@ -1,4 +1,4 @@
-use crate::splitmix::SplitMix64;
+use splitmix::SplitMix64;
 
 const N: usize = 312;
 const M: usize = 156;

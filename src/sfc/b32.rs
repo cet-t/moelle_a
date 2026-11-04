@@ -1,4 +1,4 @@
-use crate::splitmix::SplitMix32;
+use splitmix::SplitMix32;
 
 #[derive(Debug, Clone, Copy)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]

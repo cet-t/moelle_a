@@ -1,4 +1,4 @@
-use crate::splitmix::SplitMix64;
+use splitmix::SplitMix64;
 
 const STRIDE: u64 = 0x60bee2bee120fc15;
 const A: u128 = 0xa3b195354a39b70d;

@@ -1,4 +1,4 @@
-use crate::splitmix::SplitMix32;
+use splitmix::SplitMix32;
 
 #[inline(always)]
 #[allow(clippy::too_many_arguments)]
