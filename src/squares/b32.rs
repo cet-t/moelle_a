@@ -14,7 +14,7 @@ impl From<u32> for Squares32 {
     }
 }
 
-impl trng::Rng for Squares32 {
+impl fil::Rng for Squares32 {
     type Word = u32;
 
     fn nextu(&mut self) -> Self::Word {

@@ -34,7 +34,7 @@ impl From<u64> for Biski64 {
         // Warm-up period: 16 iterations to further diffuse the initial state.
         // This helps ensure that the initial outputs are well mixed.
         for _ in 0..16 {
-            let _ = trng::Rng::nextu(&mut rng);
+            let _ = fil::Rng::nextu(&mut rng);
         }
 
         // Return the warmed-up RNG
@@ -42,7 +42,7 @@ impl From<u64> for Biski64 {
     }
 }
 
-impl trng::Rng for Biski64 {
+impl fil::Rng for Biski64 {
     type Word = u64;
 
     fn nextu(&mut self) -> Self::Word {

@@ -6,7 +6,7 @@ const MATRIX_A: u32 = 0x9908B0DF;
 const UPPER_MASK: u32 = 0x80000000;
 const LOWER_MASK: u32 = 0x7FFFFFFF;
 
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy)]
 pub struct Mt19937 {
     mt: [u32; N],
     mti: usize,
@@ -28,7 +28,7 @@ impl From<u32> for Mt19937 {
     }
 }
 
-impl trng::Rng for Mt19937 {
+impl fil::Rng for Mt19937 {
     type Word = u32;
 
     fn nextu(&mut self) -> Self::Word {

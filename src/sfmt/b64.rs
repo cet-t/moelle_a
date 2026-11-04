@@ -174,7 +174,7 @@ impl Sfmt1993764 {
     }
 }
 
-impl trng::Rng for Sfmt1993764 {
+impl fil::Rng for Sfmt1993764 {
     type Word = u64;
 
     #[inline]

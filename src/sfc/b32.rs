@@ -22,7 +22,7 @@ impl From<u32> for Sfc32 {
     }
 }
 
-impl trng::Rng for Sfc32 {
+impl fil::Rng for Sfc32 {
     type Word = u32;
 
     #[inline]

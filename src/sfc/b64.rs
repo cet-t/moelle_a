@@ -22,7 +22,7 @@ impl From<u64> for Sfc64 {
     }
 }
 
-impl trng::Rng for Sfc64 {
+impl fil::Rng for Sfc64 {
     type Word = u64;
 
     #[inline]

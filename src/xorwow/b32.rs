@@ -18,7 +18,7 @@ impl From<u32> for Xorwow {
     }
 }
 
-impl trng::Rng for Xorwow {
+impl fil::Rng for Xorwow {
     type Word = u32;
 
     #[inline]

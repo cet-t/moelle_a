@@ -184,7 +184,7 @@ impl Sfmt19937 {
     }
 }
 
-impl trng::Rng for Sfmt19937 {
+impl fil::Rng for Sfmt19937 {
     type Word = u32;
 
     #[inline]
@@ -334,7 +334,7 @@ macro_rules! define_sfmt_variant {
             }
 
 
-            impl trng::Rng for [<Sfmt $mexp>] {
+            impl fil::Rng for [<Sfmt $mexp>] {
                 type Word = u32;
 
                 #[inline]

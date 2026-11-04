@@ -1,6 +1,6 @@
 #![cfg(feature = "sfmt")]
 
-use trng::Rng;
+use fil::Rng;
 
 // Expected FNV-1a hashes of little-endian output bytes from the official scalar
 // MersenneTwister-Lab/SFMT C implementation (master archive, 2026-10-22).
@@ -27,7 +27,7 @@ fn check<R: Rng<Word = u32> + From<u32>>(n: usize, cases: &[(u32, u64)]) {
 
 #[test]
 fn sfmt607_matches_official_c() {
-    check::<trng_a::Sfmt607>(
+    check::<fil_a::Sfmt607>(
         5,
         &[
             (0x00000000, 0xde071314872c35c9),
@@ -44,7 +44,7 @@ fn sfmt607_matches_official_c() {
 
 #[test]
 fn sfmt1279_matches_official_c() {
-    check::<trng_a::Sfmt1279>(
+    check::<fil_a::Sfmt1279>(
         10,
         &[
             (0x00000000, 0xa94440b10a538763),
@@ -61,7 +61,7 @@ fn sfmt1279_matches_official_c() {
 
 #[test]
 fn sfmt2281_matches_official_c() {
-    check::<trng_a::Sfmt2281>(
+    check::<fil_a::Sfmt2281>(
         18,
         &[
             (0x00000000, 0x18174d6a1a2992a4),
@@ -78,7 +78,7 @@ fn sfmt2281_matches_official_c() {
 
 #[test]
 fn sfmt4253_matches_official_c() {
-    check::<trng_a::Sfmt4253>(
+    check::<fil_a::Sfmt4253>(
         34,
         &[
             (0x00000000, 0x8a02e243c1ab298c),
@@ -95,7 +95,7 @@ fn sfmt4253_matches_official_c() {
 
 #[test]
 fn sfmt11213_matches_official_c() {
-    check::<trng_a::Sfmt11213>(
+    check::<fil_a::Sfmt11213>(
         88,
         &[
             (0x00000000, 0x3801a0f29da1a619),
@@ -112,7 +112,7 @@ fn sfmt11213_matches_official_c() {
 
 #[test]
 fn sfmt19937_matches_official_c() {
-    check::<trng_a::Sfmt19937>(
+    check::<fil_a::Sfmt19937>(
         156,
         &[
             (0x00000000, 0x3725cdde9ca1c305),
@@ -129,7 +129,7 @@ fn sfmt19937_matches_official_c() {
 
 #[test]
 fn sfmt44497_matches_official_c() {
-    check::<trng_a::Sfmt44497>(
+    check::<fil_a::Sfmt44497>(
         348,
         &[
             (0x00000000, 0xa68085f8b1e834b4),
@@ -146,7 +146,7 @@ fn sfmt44497_matches_official_c() {
 
 #[test]
 fn sfmt86243_matches_official_c() {
-    check::<trng_a::Sfmt86243>(
+    check::<fil_a::Sfmt86243>(
         674,
         &[
             (0x00000000, 0x7fd844e1cee076e5),
@@ -163,7 +163,7 @@ fn sfmt86243_matches_official_c() {
 
 #[test]
 fn sfmt132049_matches_official_c() {
-    check::<trng_a::Sfmt132049>(
+    check::<fil_a::Sfmt132049>(
         1032,
         &[
             (0x00000000, 0xb66683d00d17bec2),
@@ -180,7 +180,7 @@ fn sfmt132049_matches_official_c() {
 
 #[test]
 fn sfmt216091_matches_official_c() {
-    check::<trng_a::Sfmt216091>(
+    check::<fil_a::Sfmt216091>(
         1689,
         &[
             (0x00000000, 0x70749b0c8b58bcec),

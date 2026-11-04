@@ -30,6 +30,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "fil"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9da2f268d19828d66aa83aae822520cc9e5a3c4f15d8e08b531e45303d2e7f9c"
+dependencies = [
+ "pastey",
+]
+
+[[package]]
+name = "fil_a"
+version = "0.1.0"
+dependencies = [
+ "bytemuck",
+ "cribler_practrand",
+ "cribler_testu01",
+ "fil",
+ "pastey",
+ "serde",
+]
+
+[[package]]
 name = "find-msvc-tools"
 version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -104,27 +125,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
-]
-
-[[package]]
-name = "trng"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fca8f0c2f56bb6335593ba57214fa8d6c6c7c647a0edc9e8f91a30e0d7f744da"
-dependencies = [
- "pastey",
-]
-
-[[package]]
-name = "trng_a"
-version = "0.1.0"
-dependencies = [
- "bytemuck",
- "cribler_practrand",
- "cribler_testu01",
- "pastey",
- "serde",
- "trng",
 ]
 
 [[package]]
