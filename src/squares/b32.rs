@@ -14,10 +14,10 @@ impl From<u32> for Squares32 {
     }
 }
 
-impl fil::Rng for Squares32 {
+impl moelle::Rng for Squares32 {
     type Word = u32;
 
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         let y = self.c.wrapping_mul(self.k);
         let z = y.wrapping_add(self.k);
         let x = {

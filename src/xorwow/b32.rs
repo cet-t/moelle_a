@@ -18,11 +18,11 @@ impl From<u32> for Xorwow {
     }
 }
 
-impl fil::Rng for Xorwow {
+impl moelle::Rng for Xorwow {
     type Word = u32;
 
     #[inline]
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         let mut t = self.x[4];
 
         let s = self.x[0];

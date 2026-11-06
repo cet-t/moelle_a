@@ -56,10 +56,10 @@ macro_rules! rng_test {
         #[test]
         #[ignore = "requires external statistical engine; run explicitly in release mode"]
         fn $test() {
-            use fil::Rng;
+            use moelle::Rng;
 
             let mut rng = <$rng>::from(SEED as $seed);
-            ($run)(stringify!($rng), words(move || rng.nextu() as u64, $bits));
+            ($run)(stringify!($rng), words(move || rng.next() as u64, $bits));
         }
     };
 }
@@ -70,54 +70,54 @@ macro_rules! suite {
             use super::*;
 
             #[cfg(feature = "biski")]
-            rng_test!(biski64_test, fil_a::Biski64, u64, 64, $run);
+            rng_test!(biski64_test, moelle_a::Biski64, u64, 64, $run);
 
             #[cfg(feature = "jsf")]
-            rng_test!(jsf_test, fil_a::Jsf32, u32, 32, $run);
+            rng_test!(jsf_test, moelle_a::Jsf32, u32, 32, $run);
 
             #[cfg(feature = "mt")]
-            rng_test!(mt_test, fil_a::Mt19937, u32, 32, $run);
+            rng_test!(mt_test, moelle_a::Mt19937, u32, 32, $run);
 
             #[cfg(feature = "sfmt")]
             mod sfmt {
                 use super::*;
 
-                rng_test!(sfmt607_test, fil_a::Sfmt607, u32, 32, $run);
-                rng_test!(sfmt1279_test, fil_a::Sfmt1279, u32, 32, $run);
-                rng_test!(sfmt2281_test, fil_a::Sfmt2281, u32, 32, $run);
-                rng_test!(sfmt4253_test, fil_a::Sfmt4253, u32, 32, $run);
-                rng_test!(sfmt11213_test, fil_a::Sfmt11213, u32, 32, $run);
-                rng_test!(sfmt19937_test, fil_a::Sfmt19937, u32, 32, $run);
-                rng_test!(sfmt44497_test, fil_a::Sfmt44497, u32, 32, $run);
-                rng_test!(sfmt86243_test, fil_a::Sfmt86243, u32, 32, $run);
-                rng_test!(sfmt132049_test, fil_a::Sfmt132049, u32, 32, $run);
-                rng_test!(sfmt216091_test, fil_a::Sfmt216091, u32, 32, $run);
+                rng_test!(sfmt607_test, moelle_a::Sfmt607, u32, 32, $run);
+                rng_test!(sfmt1279_test, moelle_a::Sfmt1279, u32, 32, $run);
+                rng_test!(sfmt2281_test, moelle_a::Sfmt2281, u32, 32, $run);
+                rng_test!(sfmt4253_test, moelle_a::Sfmt4253, u32, 32, $run);
+                rng_test!(sfmt11213_test, moelle_a::Sfmt11213, u32, 32, $run);
+                rng_test!(sfmt19937_test, moelle_a::Sfmt19937, u32, 32, $run);
+                rng_test!(sfmt44497_test, moelle_a::Sfmt44497, u32, 32, $run);
+                rng_test!(sfmt86243_test, moelle_a::Sfmt86243, u32, 32, $run);
+                rng_test!(sfmt132049_test, moelle_a::Sfmt132049, u32, 32, $run);
+                rng_test!(sfmt216091_test, moelle_a::Sfmt216091, u32, 32, $run);
 
-                rng_test!(sfmt1993764_test, fil_a::Sfmt1993764, u64, 64, $run);
+                rng_test!(sfmt1993764_test, moelle_a::Sfmt1993764, u64, 64, $run);
             }
 
             #[cfg(feature = "tgfsr")]
-            rng_test!(twistedgfsr_test, fil_a::TwistedGfsr, u64, 64, $run);
+            rng_test!(twistedgfsr_test, moelle_a::TwistedGfsr, u64, 64, $run);
 
             #[cfg(feature = "wyhash")]
-            rng_test!(wyhash64_test, fil_a::WyHash64, u64, 64, $run);
+            rng_test!(wyhash64_test, moelle_a::WyHash64, u64, 64, $run);
 
             #[cfg(feature = "xorwow")]
-            rng_test!(xorwow_test, fil_a::Xorwow, u32, 32, $run);
+            rng_test!(xorwow_test, moelle_a::Xorwow, u32, 32, $run);
 
             #[cfg(feature = "sfc")]
             mod sfc {
                 use super::*;
 
-                rng_test!(sfc32_test, fil_a::Sfc32, u32, 32, $run);
-                rng_test!(sfc64_test, fil_a::Sfc64, u64, 64, $run);
+                rng_test!(sfc32_test, moelle_a::Sfc32, u32, 32, $run);
+                rng_test!(sfc64_test, moelle_a::Sfc64, u64, 64, $run);
             }
 
             #[cfg(feature = "squares")]
             mod squares {
                 use super::*;
 
-                rng_test!(squares32_test, fil_a::Squares32, u32, 32, $run);
+                rng_test!(squares32_test, moelle_a::Squares32, u32, 32, $run);
             }
         }
     };

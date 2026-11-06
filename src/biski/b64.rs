@@ -34,7 +34,7 @@ impl From<u64> for Biski64 {
         // Warm-up period: 16 iterations to further diffuse the initial state.
         // This helps ensure that the initial outputs are well mixed.
         for _ in 0..16 {
-            let _ = fil::Rng::nextu(&mut rng);
+            let _ = moelle::Rng::next(&mut rng);
         }
 
         // Return the warmed-up RNG
@@ -42,10 +42,10 @@ impl From<u64> for Biski64 {
     }
 }
 
-impl fil::Rng for Biski64 {
+impl moelle::Rng for Biski64 {
     type Word = u64;
 
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         let output = self.mix.wrapping_add(self.loop_mix);
 
         (self.fast_loop, self.mix, self.loop_mix) = (

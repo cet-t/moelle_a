@@ -22,11 +22,11 @@ impl From<u64> for Sfc64 {
     }
 }
 
-impl fil::Rng for Sfc64 {
+impl moelle::Rng for Sfc64 {
     type Word = u64;
 
     #[inline]
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         let t = self.a.wrapping_add(self.b).wrapping_add(self.counter);
 
         self.counter = self.counter.wrapping_add(1);

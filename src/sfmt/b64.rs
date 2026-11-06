@@ -174,11 +174,11 @@ impl Sfmt1993764 {
     }
 }
 
-impl fil::Rng for Sfmt1993764 {
+impl moelle::Rng for Sfmt1993764 {
     type Word = u64;
 
     #[inline]
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         if self.idx >= N * 2 {
             self.gen_rand_all();
             self.idx = 0;

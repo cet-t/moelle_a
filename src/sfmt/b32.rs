@@ -184,11 +184,11 @@ impl Sfmt19937 {
     }
 }
 
-impl fil::Rng for Sfmt19937 {
+impl moelle::Rng for Sfmt19937 {
     type Word = u32;
 
     #[inline]
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         if self.idx >= SFMT_N * 4 {
             self.gen_rand_all();
             self.idx = 0;
@@ -334,11 +334,11 @@ macro_rules! define_sfmt_variant {
             }
 
 
-            impl fil::Rng for [<Sfmt $mexp>] {
+            impl moelle::Rng for [<Sfmt $mexp>] {
                 type Word = u32;
 
                 #[inline]
-                fn nextu(&mut self) -> Self::Word {
+                fn next(&mut self) -> Self::Word {
                     if self.idx >= $n << 2 {
                         self.gen_rand_all();
                         self.idx = 0;

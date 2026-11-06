@@ -30,22 +30,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "fil"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9da2f268d19828d66aa83aae822520cc9e5a3c4f15d8e08b531e45303d2e7f9c"
-dependencies = [
- "pastey",
-]
-
-[[package]]
 name = "fil_a"
 version = "0.1.0"
 dependencies = [
  "bytemuck",
  "cribler_practrand",
  "cribler_testu01",
- "fil",
+ "moelle",
  "pastey",
  "serde",
  "splitmix",
@@ -56,6 +47,15 @@ name = "find-msvc-tools"
 version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1c66915cc5391097de7a2b0b972e8505aa33c0df401fd3a6811dbdb32881ba48"
+
+[[package]]
+name = "moelle"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ca351a2a6e4eb1eacbadc43860fb89352d8b7bbe5647dd3b6e449d9c84d49f01"
+dependencies = [
+ "pastey",
+]
 
 [[package]]
 name = "pastey"

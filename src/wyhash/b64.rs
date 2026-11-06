@@ -18,10 +18,10 @@ impl From<u64> for WyHash64 {
     }
 }
 
-impl fil::Rng for WyHash64 {
+impl moelle::Rng for WyHash64 {
     type Word = u64;
 
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         self.s = self.s.wrapping_add(STRIDE);
 
         let mut t = (self.s as u128).wrapping_mul(A);

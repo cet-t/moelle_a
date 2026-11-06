@@ -28,10 +28,10 @@ impl From<u64> for Mt1993764 {
     }
 }
 
-impl fil::Rng for Mt1993764 {
+impl moelle::Rng for Mt1993764 {
     type Word = u64;
 
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         // twist
         if self.mti >= N {
             for i in 0..(N - M) {

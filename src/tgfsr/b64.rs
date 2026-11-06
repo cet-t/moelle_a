@@ -23,10 +23,10 @@ impl From<u64> for TwistedGfsr {
     }
 }
 
-impl fil::Rng for TwistedGfsr {
+impl moelle::Rng for TwistedGfsr {
     type Word = u64;
 
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         // twist
         if self.index >= N {
             for k in 0..(N - M) {

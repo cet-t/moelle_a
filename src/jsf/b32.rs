@@ -22,10 +22,10 @@ impl From<u32> for Jsf32 {
     }
 }
 
-impl fil::Rng for Jsf32 {
+impl moelle::Rng for Jsf32 {
     type Word = u32;
 
-    fn nextu(&mut self) -> Self::Word {
+    fn next(&mut self) -> Self::Word {
         let e = self.a.wrapping_sub(self.b.rotate_left(27));
         self.a = self.b ^ self.c.rotate_left(17);
         self.b = self.c.wrapping_add(self.d);
